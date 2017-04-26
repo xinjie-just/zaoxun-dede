@@ -1,0 +1,1068 @@
+/*
+ * author: lixinjie
+ * date: 20170331
+ * 修改样式时，请修改对应less
+ * */
+@charset "utf-8";
+
+//设置所有浏览器中外边距不为零的元素的外边距为零
+body, h1, h2, h3, h4, h5, h6, p, hr, blockquote, pre, textarea, fieldset, figure, ul, ol, dl, dd, menu { margin: 0; }
+
+//设置所有浏览器中内填充不为零的元素的内填充为零
+input, textarea, button, select, option, fieldset, legend, ul, ol, menu, th, td { padding: 0; }
+
+//设置所有浏览器中边框不为零的元素的边框为零
+hr, progress, input, textarea, button, select, fieldset { border: 0; }
+
+//设置所有元素的盒模型，将内填充和边距算在宽或高之列 
+* {
+    &,
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+/*===引入normalize.css的样式===*/
+//在 IE浏览器 和 iOS 设备的浏览器中阻止调整字体的尺寸 
+html {
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+}
+
+//为 body 元素设置字体尺寸和类型
+@text-color: #333;
+@main-color: #34558a;
+@fs: 16px;
+.page-width {    
+    width: 100%;
+    max-width: 1920px;
+    margin-right: auto;
+    margin-left: auto;
+}
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    //.page-width;
+    font-size: @fs;
+    color: @text-color;
+    background-color: #fff;
+    font-family: "Microsoft Yahei", Arial, sans-serif;
+}
+
+//在 IE 9 及低版本浏览器中为下列元素设置为 inline-block 的显示方式 
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+}
+
+//在 iOS 4-7 中为无 controls属性的 audio 元素添加正确的显示方式
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+//在 Chrome, Firefox 和 Opera 中设置垂直方向基线对齐方式 
+progress { vertical-align: baseline; }
+
+//在 IE 中添加正确的显示方式
+template,
+[hidden] { display: none; }
+
+/* ===链接=== */
+//在 IE 10 中移除链接被激活后的灰色背景
+//在 iOS 8+ 和 Safari 8+ 中删除链接下划线位置处的空白
+a {
+    color: @text-color;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    text-decoration: none;
+    &:focus,
+    &:active,
+    &:hover {
+        //当链接处于焦点、被激活和鼠标悬停其上时清除轮廓
+        outline-width: 0;
+    }
+}
+
+
+/* ===文本=== */
+//在 Firefox 39 及之前的版本中移除 abbr 元素的下边框
+//在 Chrome, Edge, IE, Opera 和 Safari 中为 abbr 元素添加下划线
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+}
+
+//在 Safari 6 中防止下列元素通过后面的规则重复的应用程序的字体为粗体
+b,
+strong {
+    font-weight: inherit;
+}
+
+//在 Chrome, Edge 和 Safari 浏览器中为下列元素添加正确的字体粗细 
+b,
+strong { font-weight: bolder; }
+
+//在 Android 4.3 及之前系统的设备中的浏览器为下列元素添加字体风格为斜体
+dfn {
+    font-style: italic;
+}
+
+//在 Chrome, Firefox 和 Safari 浏览器中纠正在含有 section 和 article 语境下的 h1 元素的字体尺寸和外边距
+article h1,
+section h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+//在 IE 9 及之前的浏览器版本中为 mark 元素添加背景颜色和字体颜色 
+mark {
+    background-color: #ff0;
+    color: #000;
+}
+
+//为 small 元素设置字体尺寸为离其最近的含有 font-size 属性的祖先元素的值的 80%
+small {
+    font-size: 80%;
+}
+
+//防止 sub 和 sup 元素影响行高 
+.sub-sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sub {
+    .sub-sup;
+    bottom: -0.25em;
+}
+sup {
+    .sub-sup;
+    top: -0.5em;
+}
+
+/* ===嵌入式内容=== */
+//在 IE 10 及更早的浏览器中当图片处于链接内部时移除图片的边框
+img {
+    border-style: none;
+}
+
+//在 IE 浏览器中当 svg 元素不是根元素时隐藏溢出
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ===分组内容=== */
+//纠正字体尺寸的继承和缩放(momospace字体是linux系统下的默认字体)
+//在所有浏览器中纠正奇数的以 em 作为单位的字体尺寸
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: @fs;
+}
+
+//在 Firefox 浏览器下为 hr 元素添加正确的和模型尺寸计算方式
+//在 Edge 和 IE 中 hr 元素溢出时不隐藏
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+/* ===表单=== */
+//改变字体属性为继承
+//在 Firefox 和 Safari 中为下列元素移除外边距
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    margin: 0;
+}
+//通过之前的规则修复 optgroup 元素的字体粗细
+optgroup {
+    font-weight: bold;
+}
+
+//溢出时不隐藏 
+button,
+input {
+    overflow: visible;
+}
+
+//移除文本大小写的继承
+button,
+select {
+    text-transform: none;
+}
+
+//在 Android 4 系统版本中阻止破坏本地的音频视频控件的错误
+//在 iOS 和 Safari 中纠正不能点击的类型
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+    &:focus {
+        outline: none;
+    }
+}
+//在 Firefox 中移除内部边框和内填充(firefox浏览器中button元素点击时会出现虚线边框)
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+//由先前的规则恢复焦点样式设置
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+//设置 fieldset 元素的 border, margin 和 padding 属性的值 
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+//在 Edge 和 IE 中纠正文本包裹
+//纠正在 IE 中从 fieldset 元素继承而来的颜色值
+//在所有浏览器中当开发者清零了 fieldset 元素的属性时，移除 padding 属性的值，以便他们能找出其它错误
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+}
+
+//在 IE 浏览器中移除默认的垂直导航条
+textarea {
+    overflow: auto;
+}
+
+//在 IE 10 及之前的浏览器中改变盒模型的默认规则，即将内填充和边框也算在宽高之内 
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+//纠正在 Chrome 浏览器中递增和递减按钮的光标样式
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+//纠正 Chrome 和 Safari 浏览器奇怪的外观（看上去像文本框）
+//纠正在 Safari 浏览器中的轮廓样式（设置轮廓的偏移）
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+//在 OS X 的 Chrome 和 Safari 浏览器中删除内填充和移除按钮
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+//纠正在 Chrome, Edge 和 Safari 中文本占位符属性的样式 
+::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 0.54;
+}
+
+//纠正在 iOS 和 Safair 中可点击类型不能点击的样式
+//更改字体属性，在 Safari 中以继承的方式。
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+/* ===表格=== */
+//设置表格的边框合并为单一的边框，
+//border-collapse 属性会忽略 border-spacing(相邻单元格边框间的距离) 属性和 empty-cells(是否在空单元格周围绘制边框)
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+caption,
+th {
+    text-align: left;
+}
+
+/* ===列表=== */
+//设置列表的标记类型为无 
+ol,
+ul {
+    list-style-type: none;
+}
+
+
+/* ===关于浮动=== */
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clearfix {
+    &:before {
+        content: "";
+        display: table;        
+    }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+figure {
+    overflow: hidden;
+    & a {
+        display: block;
+    }
+    & img {        
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+label {
+    cursor: pointer;
+    &:hover {
+        opacity: .8;
+    }
+}
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.center-content {
+    display: block;
+    width: 96%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.responsive-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.middle-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*===矢量图标字体===*/
+@font-face {font-family: "iconfont";
+  src: url('../iconfont/iconfont.eot?t=1490924440106'); /* IE9*/
+  src: url('../iconfont/iconfont.eot?t=1490924440106#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../iconfont/iconfont.woff?t=1490924440106') format('woff'), /* chrome, firefox */
+  url('../iconfont/iconfont.ttf?t=1490924440106') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../iconfont/iconfont.svg?t=1490924440106#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size: @fs;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-email:before { content: "\e665"; }
+.icon-close:before { content: "\e6a8"; }
+.icon-home:before { content: "\e63b"; }
+.icon-menu:before { content: "\e613"; }
+.icon-totop:before { content: "\e600"; }
+.icon-tel3:before { content: "\ec76"; }
+.icon-tel2:before { content: "\e614"; }
+.icon-tel1:before { content: "\e612"; }
+
+/*头部*/
+@headerHeight: 75px;
+header {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    height: @headerHeight;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: @main-color;
+    & .tel {
+        position: absolute;
+        top: 50%;
+        left: 100px;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #fff;
+        & i {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        & em {
+            font-style: normal;
+            & a {
+                color: #fff;
+            }
+        }
+    }
+    & .logo {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        & figure {
+            background-color: #fff;
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin-bottom: 10px;
+            transition: all 0.8s ease 0s;
+            & img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: all 0.8s ease 0s;
+            }
+        }
+        & span {
+            display: block;
+            text-align: center;
+            font-size: 12px;
+            color: #fff;
+        }
+    }
+}
+/*导航*/
+#nav {
+    @size: 85px;
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 100%;
+    & .menu {
+        display: block;
+        z-index: 5; // 这里的值大于导航的值
+        width: 100%;
+        height: @headerHeight;
+        text-align: center;
+        background-color: transparent;
+        padding-right: @size;
+        text-align: right;
+        & i {
+            display: inline-block;
+            height: @headerHeight;
+            width: @headerHeight;
+            text-align: right;
+            line-height: @headerHeight;
+            font-size: @fs + 4;
+            color: #fff;
+        }
+    }
+    & .nav-list {
+        display: none;
+        padding-top: 40px;
+        padding-right: @size;
+        text-align: right;
+        background-color: rgba(52, 85, 138, .5);        
+        height: 100%;
+        & > li{
+            margin-bottom: 15px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+            & a {
+                position: relative;
+                display: block;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                color: #fff;
+                font-size: 18px;
+                &:hover,
+                &.active {
+                    color: #f0c18f;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        right: -@size;
+                        width: 60px;
+                        height: 2px;
+                        background-color: #f0c18f;
+                        margin-top: -1px;
+                    }
+                }
+            }
+            & > a {
+                & > span {
+                    display: block;
+                    &:first-of-type {
+                        font-size: 18px;
+                    }
+                    &:last-of-type {
+                        font-size: 12px;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+            & ul {
+                display: none;
+                & li {
+                    & a {
+                        display: block;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        color: #fff;
+                        font-size: 16px;                        
+                    }
+                } 
+            }
+        }
+    }
+//  & .index-nav-list {
+//      background-color: rgba(52, 85, 138, .5);         
+//  }
+}
+/*主要内容部分*/
+#main {
+    margin-top: @headerHeight;
+}
+/*公司形象展示页主要内容部分*/
+#homeMain {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+/*.company-show {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/company-show.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 230px;
+    zoom: 1;
+    text-align: center;
+    & li {
+        margin-top: 1rem;
+        list-style-type: none;
+        opacity: 0;
+        transition: opacity 1.5s ease 0.1s;
+    }
+}*/
+.company-show {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    zoom: 1;
+    text-align: center;
+    & figure {
+        width: 100%;
+        height: 100%;
+        & img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    & ul {
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        & li {
+            margin-top: 1rem;
+            list-style-type: none;
+            opacity: 0;
+            transition: opacity 1.5s ease 0.1s;
+        }
+    }
+}
+
+/*公司形象展示页底部*/
+#homeFooter {
+    z-index: 4;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: @headerHeight - 25;
+    margin-right: auto;
+    margin-left: auto;
+    & figure {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*===首页===*/
+/*banner图部分*/
+.banner {
+    position: relative;
+}
+/*首页主要内容*/
+.suspend-code {
+    z-index: 999;
+    position: fixed;
+    top: 130px;
+    left: 0;
+    background-color: #e8e8e8;
+    padding-bottom: 20px;
+    & .heading {
+        background-color: #2bbca8;
+        color: #fff;
+        & a {
+            display: block;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: #fff;
+            & span {
+                display: block;
+                text-align: center;
+                line-height: 1.3;
+            }
+        }
+    }
+    & .code {
+        margin-top: 15px;
+        text-align: center;
+        padding-right: 15px;
+        padding-left: 15px;
+        & img {
+            display: block;
+            margin-top: 5px;
+        }
+    }
+}
+
+/*hcc部分*/
+.hcc {
+    width: 536px;
+    margin: 50px auto 0;
+    & .hcc-img {
+        margin-bottom: 40px;
+    }
+    & .text {
+        font-size: @fs;
+        color: #848484;
+        line-height: 2;
+    }
+}
+/*系统体系*/
+.system-char {
+    width: 897px;
+    margin: 50px auto 0;
+}
+
+/*底部*/
+#footer {
+    background-color: #2a2a2a;
+    @paddingTop: 30px;
+    padding-top: @paddingTop;
+    padding-bottom: @paddingTop;
+    /*& .container {
+        width: 1000px;
+        margin-right: auto;
+        margin-left: auto;
+        .clearfix;
+        & > div {
+            .fl;
+        }
+        & .contact {
+            & li {
+                @height: 35px;
+                height: @height;
+                line-height: @height;
+                font-size: @fs;
+                font-family: "黑体";
+                background-position: left center;
+                background-repeat: no-repeat;
+                padding-left: 40px;
+                &:nth-of-type(1) {
+                    background-image: url(../images/email-icon.png);
+                }
+                &:nth-of-type(2) {
+                    background-image: url(../images/email-icon.png);
+                }
+                &:nth-of-type(3) {
+                    background-image: url(../images/tel-icon.png);
+                }
+                &:nth-of-type(4) {
+                    background-image: url(../images/home-icon.png);
+                }
+                & a {
+                    color: #fff;
+                }
+            }
+            & figure.logo-text {
+                margin-top: 15px;
+                & img {
+                    margin-left: 0;
+                }
+            }
+        }
+        & .code {
+            margin-top: 30px;
+            margin-left: 200px;
+            & > div {
+                .fl;
+                text-align: center;
+                font-size: @fs - 1;
+                &:first-of-type {
+                    position: relative;
+                    margin-right: 50px;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: -25px;
+                        width: 1px;
+                        height: 100px;
+                        background-color: #fff;
+                    }                    
+                }
+                & img {
+                    display: block;
+                    margin-bottom: 10px;
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+    }*/
+    & .totop {
+        z-index: 999;
+        .fr;
+        @size: 70px;
+        position: fixed;
+        right: 10px;
+        bottom: 130px;
+        @height: 70px;
+        height: @size;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: @size;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+        background-color: #ccc;
+        color: #000;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.6s ease 0.1s;
+        &:hover {
+            border: 2px solid #999;
+            background-color: #999;
+        }
+        & i {
+            font-size: @fs + 4;
+        }
+        & span {
+            display: block;
+            font-size: 10px;
+        }
+    }
+    & small {
+        width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        text-align: center;
+        line-height: 1.8;
+        color: #fff;
+    }
+}
+
+/*===行业应用===*/
+/*行业应用部分*/
+.application-section {
+    max-width: 100%;
+    width: 1920px;
+    height: 770px;
+    margin: 30px auto;
+    background: url(../images/app-scene.png) center top no-repeat;
+    position: relative;
+    & h2 {
+        position: absolute;
+        top: 70px;
+        left: 50%;        
+        font-size: 0;
+        width: 1200px;
+        transform: translateX(-50%);
+        & span {
+            display: inline-block;
+            color: #0c315c;
+            font-size: @fs + 24;
+            line-height: 1.2;
+            &:last-of-type {
+                margin-left: 10px;
+                font-weight: normal;
+            }
+        }
+        @media (max-width: 1600px) {
+            width: 1000px;
+            & span {
+                font-size: @fs + 20;
+            }
+        }
+    }
+}
+
+.industry-section {
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/*公共卫生*/
+.public-health {
+    position: relative;
+    @height: 40px;
+    margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    .clearfix;
+    & figure {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    & > div:not(.tel) {
+        float: left;
+        width: 33.33%;
+        height: 230px;
+        padding-top: 85px;
+        background-repeat:no-repeat;
+        & h3 {
+            text-align: center;
+        }
+    }
+    & > .heading {
+        background-color: #87ebe5;
+        color: #0993c6;
+        & h2 {
+            padding-left: 20px;
+            & span {
+                display: block;
+            }
+            & span:first-of-type {
+                font-size: @fs + 8;
+            }
+            & span:last-of-type {
+                margin-top: 10px;
+                font-size: @fs - 2;
+                font-weight: normal;
+            }
+        }
+    }
+    & .health-record {
+        background-color: #0993c6;
+        color: #fff;
+        background-image: url(../images/health-record1.png);
+        background-position: center 120px;
+    }
+    & .physician-service {
+        background-color: #e2e2e2;
+        color: #494949;
+        background-image: url(../images/physician-service1.png);
+        background-position: center 120px;
+    }
+    & .statistic-analysis {
+        background-color: #00b9ae;
+        color: #fff;
+        background-image: url(../images/statistic-analysis1.png);
+        background-position: center 120px;
+    }
+    & .medical-service {
+        background-color: #e2e2e2;
+        color: #494949;
+        background-image: url(../images/medical-service3.png);
+        background-position: center 120px;
+    }
+    & .data-administration {
+        background-color: #0993c6;
+        color: #fff;
+        background-image: url(../images/data-administration3.png);
+        background-position: center 120px;
+    }
+    & .tel {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: @fs + 7;
+        color: #0993c6;
+        text-align: center;
+        font-weight: 600;
+        padding-left: 35px;
+        background: url(../images/tel2.png) no-repeat left center;
+    }
+}
+/*居家养老*/
+.provide-aged {
+    @height: 40px;
+    margin-top: @height;
+    & > div:not(.heading) {
+        padding: 40px 150px;
+        & h3 {
+            font-size: @fs + 12;
+            margin-bottom: .5rem;
+        }
+        & li {
+            font-size: @fs + 2;
+        }
+    }
+    & .heading {
+        background: url(../images/panda-11.png) left top no-repeat;
+        padding-top: 90px;
+        padding-left: 190px;
+        text-align: left;
+        padding-bottom: 1rem;
+        & h2 {
+            & span {
+                display: block;
+                &:first-of-type {
+                    color: #464646;
+                    font-size: @fs + 24;
+                    margin-left: -18px;
+                }
+                &:last-of-type {
+                    color: #464646;
+                    font-size: @fs + 2;
+                    font-weight: normal;
+                }
+            }            
+        }
+    }
+    & > div {
+        & ul {
+            & li {                
+                height: @height + 6;
+                line-height: @height;
+                background-position: right center;
+                background-repeat: no-repeat;
+                padding-top: 3px;
+                padding-bottom: 3px;                
+            }
+        }
+    }
+    & .providing-elderly {
+        background-color: #01a2c5;
+        color: #fff;
+        & li {
+            &:nth-of-type(1) {
+                background-image: url(../images/providing-elderly1.png);
+            }  
+        }
+    }
+    & .rely-elderly {
+        background-color: #87ebe5;
+        color: #494949;
+        & li {
+            &:nth-of-type(1) {
+                background-image: url(../images/rely-elderly1.png);
+            }  
+        }
+    }
+    & .happy-elderly {
+        background-color: #02acb7;
+        color: #fff;
+        & li {
+            &:nth-of-type(1) {
+                background-image: url(../images/happy-elderly1.png);
+            }  
+        }
+    }
+    & .deed-elderly {
+        background-color: #87ebe5;
+        color: #494949;
+        & li {
+            &:nth-of-type(1) {
+                background-image: url(../images/deed-elderly1.png);
+            }  
+        }
+        & .tel {
+            font-size: @fs + 7;
+            color: #fefefe;
+            text-align: center;
+            margin-top: 1rem;
+            & i {
+               font-size: @fs + 12; 
+            }
+        }
+    }
+}
+
+/*===关于早寻===*/
+/*关于我们部分*/
+.info-about {
+    margin-top: 40px;
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    & figure {
+        margin-bottom: 20px;
+    }
+    & article {
+        font-family: "黑体";
+        font-size: @fs;
+        color: #808080;
+        & h2 {
+            font-size: @fs + 14;
+            text-align: center;
+        }
+        & p,
+        & div {
+            line-height: 1.8;
+            margin-top: .8em;
+            text-indent: 2em;
+        }
+    }
+}
+/*hcc部分*/
+.info-hcc {
+    margin-top: 60px;
+    & figure {
+        margin-bottom: 20px;
+    }
+    & ul {
+        .clearfix;
+        .page-width;
+        & li {
+            width: 25%;
+            float: left;
+            & img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

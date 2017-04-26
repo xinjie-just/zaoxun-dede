@@ -1,0 +1,4 @@
+INSERT INTO `zx_member_space` VALUES('1','10','0','admin的空间','','person','','');
+INSERT INTO `zx_member_space` VALUES('2','10','0','成都早寻智能科技股份有限公司的空间','','person','','');
+INSERT INTO `zx_member_space` VALUES('3','10','0','成都早寻智能科技股份有限公司的空间','','person','','');
+INSERT INTO `zx_member_space` VALUES('4','10','0','成都早寻智能科技股份有限公司的空间','','person','','');

@@ -1,0 +1,6 @@
+INSERT INTO `zx_plus_seoinfo` VALUES('1','1492503481','0','0','0','0','0');
+INSERT INTO `zx_plus_seoinfo` VALUES('2','1492563646','0','0','0','0','0');
+INSERT INTO `zx_plus_seoinfo` VALUES('3','1492589845','0','0','0','0','0');
+INSERT INTO `zx_plus_seoinfo` VALUES('4','1492655661','0','0','0','0','0');
+INSERT INTO `zx_plus_seoinfo` VALUES('5','1492678508','0','0','0','0','0');
+INSERT INTO `zx_plus_seoinfo` VALUES('6','1492756683','0','0','0','0','0');

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+		<title>{dede:field.seotitle/} | {dede:global.cfg_webname/}</title>
+		<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+		<meta name="description" content="{dede:global.cfg_description/}" />
+		<link rel="stylesheet" href="/style/zaoxun.css" />
+	</head>
+
+	<body>
+		<nav id="nav" role="navigation">
+			<button type="button" class="menu" id="menu" title="展开/关闭菜单">
+				<i class="iconfont icon-menu" id="iconMenu"></i>
+			</button>
+			<ul class="nav-list" id="navList">
+				<li class="nav-item">
+					<a href="/" title="首页">
+						<span>首页</span>
+						<span>Home page</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="javascript:void(0)" title="行业应用" class="active">
+						<span>行业应用</span>
+						<span>Industry application</span>
+					</a>
+					<ul>
+						<li>
+							<a href="/industry#health" title="公共卫生">【公共卫生】智慧健康管理方案</a>
+						</li>
+						<li>
+							<a href="/industry#aged" title="居家养老">【居家养老】智慧健康管理方案</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a href="/about" title="关于早寻">
+						<span>关于早寻</span>
+						<span>About foresight</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="/hcc" title="HCC日常健康管理体系">
+						<span>HCC日常健康管理体系</span>
+						<span>HEALTH CONTEXT CLOUD</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="/contact" title="联系我们">
+						<span>联系我们</span>
+						<span>Contact us</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		{dede:include filename='zx_header.htm'/}
+		<main id="main" role="main">
+			<section class="banner industry-banner">
+				<figure class="industry-img">
+					<img src="/images/industry-banner.jpg" alt="行业应用banner"/>
+				</figure>
+			</section>
+			<section class="application-section">
+				<h2>
+					<span>行业<br>应用</span>
+					<span>INDUSTRY<br>APPLICATION</span>
+				</h2>
+			</section>
+			<section class="industry-section public-health" id="health">
+				<figure>
+					<img src="/images/panda-9.png" alt=""/>
+				</figure>
+				<div class="heading">
+					<h2>
+						<span>【公共卫生】<br>智慧健康管理方案</span>
+						<span>[The public health service]<br>Wisdom health management solutions</span>
+					</h2>
+				</div>
+				<!--健康档案-->
+				<div class="health-record">
+					<h3>全智能电子健康档案</h3>
+				</div>
+				<!--医生服务-->
+				<div class="physician-service">
+					<h3>高效的家庭医生服务</h3>
+				</div>
+				<!--统计分析-->
+				<div class="statistic-analysis">
+					<h3>区域性健康数据的统计分析</h3>
+				</div>
+				<!--医疗服务-->
+				<div class="medical-service">
+					<h3>可视化远程医疗服务</h3>
+				</div>
+				<!--数据管理-->
+				<div class="data-administration">
+					<h3>慢病规范化监测和数据管理</h3>
+				</div>
+				<div class="tel">
+					<span>【更多内容请咨询电话028-85577447】</span>
+				</div>
+			</section>
+			<section class="industry-section provide-aged" id="aged">
+				<div class="heading">
+					<h2>
+						<span>【居家养老】智慧健康管理方案</span>
+						<span>[pension that occupy the home]Wisdom health management solutions</span>
+					</h2>
+				</div>
+				<!--老有所养-->
+				<div class="providing-elderly">
+					<h3>老有所养</h3>
+					<ul>
+						<li>提供24小时全天候老人监测和管理</li>
+					</ul>
+				</div>
+				<!--老有所依-->
+				<div class="rely-elderly">
+					<h3>老有所依</h3>
+					<ul>
+						<li>空巢老人健康关爱新模式</li>
+					</ul>
+				</div>
+				<!--老有所乐-->
+				<div class="happy-elderly">
+					<h3>老有所乐</h3>
+					<ul>
+						<li>围绕健康生活的社交平台</li>
+					</ul>
+				</div>
+				<!--老有所为-->
+				<div class="deed-elderly">
+					<h3>老有所为</h3>
+					<ul>
+						<li>邻里互助 快乐养老</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+		{dede:include filename='zx_footer.htm'/}
+	</body>
+
+</html>

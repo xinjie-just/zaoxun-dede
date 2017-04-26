@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+		<title>成都早寻智能科技股份有限公司</title>
+		<meta name="keywords" content="个人健康管理,健康小区建设,基础医疗服务,HCC,智能、便捷、全面,远程医疗服务" />
+		<meta name="description" content="HCC日常健康管理体系是以个人为中心的健康生活平台，引导全民积极参与健康管理，为个人提供全面的健康生活服务，帮助人们建立科学合理的生活方式和健康管理方式的服务平台。" />
+		<link rel="stylesheet" href="/style/zaoxun.css" />
+	</head>
+
+	<body>		
+		<nav id="nav" role="navigation">
+			<button type="button" class="menu" id="menu" title="展开/关闭菜单">
+				<i class="iconfont icon-menu" id="iconMenu"></i>
+			</button>
+			<ul class="nav-list" id="navList">
+				<li class="nav-item">
+					<a href="javascript:void(0)" title="首页" class="active">
+						<span>首页</span>
+						<span>Home page</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="/industry" title="行业应用">
+						<span>行业应用</span>
+						<span>Industry application</span>
+					</a>
+					<ul>
+						<li>
+							<a href="/industry#health" title="公共卫生">【公共卫生】智慧健康管理方案</a>
+						</li>
+						<li>
+							<a href="/industry#aged" title="居家养老">【居家养老】智慧健康管理方案</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a href="/about" title="关于早寻">
+						<span>关于早寻</span>
+						<span>About foresight</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="/hcc" title="HCC日常健康管理体系">
+						<span>HCC日常健康管理体系</span>
+						<span>HEALTH CONTEXT CLOUD</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="/contact" title="联系我们">
+						<span>联系我们</span>
+						<span>Contact us</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<!--
+<nav id="nav" role="navigation">
+	<button type="button" class="menu" id="menu" title="展开/关闭菜单">
+		<i class="iconfont icon-menu" id="iconMenu"></i>
+	</button>
+	<ul class="nav-list" id="navList">
+		<li class="nav-item">
+			<a href="/" title="首页">
+				<span>首页</span>
+				<span>Home page</span>
+			</a>
+		</li>      
+        
+			<li class="nav-item">
+            	<a href="/industry/" title="行业应用">
+                  	<span>行业应用</span>
+					<span>Industry application</span>
+              	</a>
+      		</li>
+		
+			<li class="nav-item">
+            	<a href="/about/" title="关于早寻">
+                  	<span>关于早寻</span>
+					<span>About foresight</span>
+              	</a>
+      		</li>
+		
+			<li class="nav-item">
+            	<a href="/hcc/" title="HCC日常健康管理体系">
+                  	<span>HCC日常健康管理体系</span>
+					<span>HEALTH CONTEXT CLOUD</span>
+              	</a>
+      		</li>
+		
+			<li class="nav-item">
+            	<a href="/contact/" title="联系我们">
+                  	<span>联系我们</span>
+					<span>Contact us</span>
+              	</a>
+      		</li>
+		
+	</ul>
+</nav>
+-->
+<header id="header" role="banner">
+	<div class="tel">
+		<i class="iconfont icon-tel2"></i><em>Tell:<a href="tel:02885577447" title="给我们打电话">028-85577447</a></em>
+	</div>
+	<div class="logo">
+		<figure id="logoFigure">
+			<img src="/images/logo.png" alt="成都早寻智能科技股份有限公司" />
+		</figure>
+	</div>
+</header>
+		<main id="homeMain" role="main">
+			<!--<div class="company-show">
+				<li id="showOne"><img src="images/show1.png" alt="" /></li>
+				<li id="showTwo"><img src="images/show2.png" alt="" /></li>
+				<li id="showThree"><img src="images/show3.png" alt="" /></li>
+			</div>-->
+			<div class="company-show">
+				
+				<ul>
+					<li id="showOne"><img src="/images/show1.png" alt="" /></li>
+					<li id="showTwo"><img src="/images/show2.png" alt="" /></li>
+					<li id="showThree"><img src="/images/show3.png" alt="" /></li>
+				</ul>				
+			</div>
+		</main>
+		<footer id="homeFooter" role="contentinfo">
+			<figure>
+				<img src="/images/logo-text.png" alt="早寻智能科技" />
+			</figure>
+		</footer>
+		<script src="/script/jquery-3.2.0.min.js"></script>
+		<script src="/script/zaoxun.js"></script>
+		<script>
+			//中间部分文字渐显
+			$(document).ready(function() {
+				setTimeout(function() {
+					$("#showOne").css("opacity", 1);
+				}, 300);
+				setTimeout(function() {
+					$("#showTwo").css("opacity", 1);
+				}, 1300);
+				setTimeout(function() {
+					$("#showThree").css("opacity", 1);
+				}, 2300);
+			});
+		</script>
+	</body>
+
+</html>

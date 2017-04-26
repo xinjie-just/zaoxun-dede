@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+		<title>{dede:field.seotitle/} | {dede:global.cfg_webname/}</title>
+		<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+		<meta name="description" content="{dede:global.cfg_description/}" />
+		<link rel="stylesheet" href="/style/zaoxun.css" />
+	</head>
+
+	<body>
+		<nav id="nav" role="navigation">
+			<button type="button" class="menu" id="menu" title="展开/关闭菜单">
+				<i class="iconfont icon-menu" id="iconMenu"></i>
+			</button>
+			<ul class="nav-list" id="navList">
+				<li class="nav-item">
+					<a href="/" title="首页">
+						<span>首页</span>
+						<span>Home page</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="/industry" title="行业应用">
+						<span>行业应用</span>
+						<span>Industry application</span>
+					</a>
+					<ul>
+						<li>
+							<a href="/industry#health" title="公共卫生">【公共卫生】智慧健康管理方案</a>
+						</li>
+						<li>
+							<a href="/industry#aged" title="居家养老">【居家养老】智慧健康管理方案</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a href="/about" title="关于早寻">
+						<span>关于早寻</span>
+						<span>About foresight</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="javascript:void(0)" title="HCC日常健康管理体系" class="active">
+						<span>HCC日常健康管理体系</span>
+						<span>HEALTH CONTEXT CLOUD</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="/contact" title="联系我们">
+						<span>联系我们</span>
+						<span>Contact us</span>
+					</a>
+				</li>
+			</ul>
+		</nav>	
+		{dede:include filename='zx_header.htm'/}
+		<main id="main" role="main">
+			<section class="banner hcc-banner">
+				<figure class="hcc-img">
+					<img src="/images/hcc-banner.jpg" alt="hcc banner图" />
+				</figure>
+			</section>
+			<section class="hcc">
+				<figure class="hcc-img">
+					<img src="/images/hcc.jpg" alt="HCC健康管理体系" />
+				</figure>
+				<div class="text">{dede:field.content/}</div>
+			</section>
+			<section class="system-char">
+				<figure class="char">
+					<img src="/images/char.png" alt="体系特点"/>
+				</figure>
+			</section>
+		</main>
+		{dede:include filename='zx_footer.htm'/}
+	</body>
+
+</html>
